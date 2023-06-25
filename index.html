@@ -2,62 +2,20 @@
 <html>
 <head>
     <title>YouTube URL入力</title>
-    <style>
-        body {
-            background-color: #222;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #3498db;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        #embedCodeDisplay {
-            margin-top: 20px;
-            font-size: 16px;
-            text-align: left;
-            overflow-wrap: break-word;
-        }
-    </style>
 </head>
 <body>
-    <h1>YouTubeのURLを入力してください</h1>
-    <input type="text" id="urlInput">
-    <br>
-    <button onclick="generateEmbedCode()">生成する</button>
-
-    <div id="embedCodeDisplay"></div>
-
     <script>
         function generateEmbedCode() {
             var url = document.getElementById('urlInput').value;
-            var embedCode = '<iframe id="widgetApi" src="http://yt-download.org/api/widget?url=' + url + '" width="100%" height="100%" allowtransparency="true" scrolling="yes" style="border:none"></iframe>';
+            var embedCode = '<iframe id="widgetApi" src="http://yt-download.org/api/widget?url=' + url + '" width="100%" height="100%" allowtransparency="true" scrolling="no" style="border:none"></iframe>';
             document.getElementById('embedCodeDisplay').innerHTML = embedCode;
         }
     </script>
+
+    <h1>YouTubeのURLを入力してください</h1>
+    <input type="text" id="urlInput">
+    <button onclick="generateEmbedCode()">生成する</button>
+
+    <div id="embedCodeDisplay"></div>
 </body>
 </html>
