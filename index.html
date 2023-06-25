@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube URL入力</title>
+</head>
+<body>
+    <h1>YouTubeのURLを入力してください</h1>
+    <input type="text" id="urlInput">
+    <button onclick="generateEmbedCode()">生成する</button>
+
+    <div id="embedCodeDisplay"></div>
+
+    <script>
+        function generateEmbedCode() {
+            var url = document.getElementById('urlInput').value;
+            var embedCode = '<iframe id="widgetApi" src="http://yt-download.org/api/widget?url=' + url + '" width="100%" height="100%" allowtransparency="true" scrolling="no" style="border:none"></iframe>';
+            document.getElementById('embedCodeDisplay').innerHTML = embedCode;
+        }
+    </script>
+</body>
+</html>
